@@ -1,0 +1,80 @@
+.custom-card{
+    height: 115px!important;   
+    background: url(../../assets/img/patters/Pokeball.svg);
+    background-size: 145px;
+    background-repeat: no-repeat;
+    background-position: top 0 right -20px;
+    padding: 15px;
+    border: 0!important;
+    cursor: pointer;
+    
+}
+.custom-card:hover .poke-image{
+   
+    transform: scale(1.1);
+    transition: transform 0.5s;
+}
+
+.card-container{
+    min-width: 290px;
+    flex: 1!important;
+}
+.card h5{
+    color: var(--text-white, #FFF);
+    /* Pokemon Name */
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.card h6{
+    color: var(--text-number, rgba(23, 23, 27, 0.60));
+    /* Pokemon Number */
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.card .poke-image{
+    width: 130px;  
+    height: 130px;
+    position: absolute;
+    right: 0;
+    top: -30px;
+    transition: transform 0.5s;
+}
+.card::before{
+    content: "";
+    height: 32px;
+    width: 74px;
+    background: url('../../assets/img/patters/6x3-grad.svg');
+    position: absolute;
+    background-size: cover;
+    background-repeat: no-repeat;
+    right: 50%;
+    top: 0;   
+}
+
+.type-badge {
+      
+    float: left;
+    margin-right: 5px;
+    border-radius: 3px;
+    display: inline-flex;
+    padding: 5px;
+    align-items: center;
+    gap: 5px;
+}
+.type-badge .icon{
+    width: 15px;
+    display: block;
+    float: left;
+    height: 15px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    filter: invert(100%);
+}
+
+

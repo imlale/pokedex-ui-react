@@ -1,0 +1,239 @@
+.tab-content {
+    border-radius: 30px 30px 0px 0px;
+    background: var(--background-white, #FFF);
+}
+
+.offcanvas-body {
+    overflow: hidden !important;
+    display: flex;
+    flex-direction: column;
+}
+
+.tab-content {
+    flex: 1;
+    overflow-y: auto;
+}
+
+.tab-pane {
+    padding: 25px;
+
+}
+
+#home-tab.active,
+#profile-tab.active,
+#contact-tab.active {
+    color: var(--text-white, #FFF) !important;
+    background-color: transparent !important;
+    border: 0px !important;
+    /* Filter Title */
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+#mytab,
+.nav-tabs {
+    border: 0 !important;
+    justify-content: space-around;
+}
+
+.nav-item {
+    flex: 1;
+
+}
+
+.nav-item .active {
+    background: url(../../assets/img/patters/tab-pokeball.svg) no-repeat;
+    background-position: top center;
+
+}
+
+
+.nav-link:not(.active):hover {
+    border: 0 !important;
+    transform: translateY(-2px);
+    transition: transform 0.3s;
+}
+
+#home-tab,
+#profile-tab,
+#contact-tab {
+    border: 0 !important;
+    color: var(--text-white, #FFF);
+    text-align: center;
+    /* Description */
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    width: 100%;
+    transition: transform 0.3s;
+}
+
+.pokemon-info {
+    z-index: 1;
+}
+
+.pokemon-info h2 {
+
+    color: var(--text-white, #FFF);
+    /* Application Title */
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin: 0;
+}
+
+.pokemon-info p {
+    color: var(--text-number, rgba(23, 23, 27, 0.60));
+    /* Filter Title */
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin: 0;
+
+}
+
+#myTabContent h6 {
+    /* Filter Title */
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 20px;
+}
+
+#home p, #profile p  {
+    color: var(--text-gray, #747476);
+    /* Description */
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    display: flex;
+    justify-content: space-between;
+}
+
+.property-title {
+    color: var(--text-black, #17171B);
+    /* Pokemon Type */
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    float: left;
+}
+
+.about .property-title {
+    flex: 2
+}
+
+.about .property-value {
+    flex: 4
+}
+
+.pokemon-image {
+    text-align: center;
+    background: url('../../assets/img/patters/tab-pokeball.svg') no-repeat;
+    background-position: center;
+    background-size: 125px;
+    z-index: 1;
+
+}
+
+.pokemon-image img {
+    width: 125px;
+    height: 125px;
+}
+
+.progress {
+    height: 5px !important;
+    overflow: hidden;
+    transform: translateY(10px);
+}
+
+.icon {
+    width: 30px;
+    display: block;
+    height: 30px;
+    filter: invert(1);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 15px 15px;
+}
+
+.pokemon-header::after {
+    content: '';
+    height: 100px;
+    width: 100px;
+    background: url('../../assets/img/patters/6x3-grad.svg') no-repeat;
+    background-position: top;
+    position: absolute;
+    right: 0;
+    transform: rotate(90deg);
+}
+
+.pokemon-header {
+    margin-top: 25px;
+}
+
+.pokemon-name-bg {
+    color: transparent;
+    width: max-content;
+    -webkit-text-stroke: 1.5px;
+    -webkit-text-stroke-width: 1.5px;
+    -webkit-text-stroke-color: rgb(255, 255, 255);
+    position: absolute;
+    top: -20px;
+    left: -10%;
+    font-size: 120px;
+    text-transform: uppercase;
+    font-weight: 700;
+    opacity: 0.3;
+    pointer-events: none;
+}
+
+.pokemon-name-bg p {
+    animation-name: desplazamiento;
+    animation-duration: 40s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes desplazamiento {
+    0% {
+        transform: translateX(5%);
+        
+    }
+
+    100% {
+        transform: translateX(-25%);
+       
+    }
+}
+
+
+#offcanvasRight {
+    overflow: hidden;
+}
+
+.gradient {
+    width: 100%;
+    height: 100px;
+    position: relative;
+    top: -120px;
+}
+
+.offcanvas.loading .offcanvas-body {
+    filter: grayscale(1) blur(2px);
+}
+
+.pokemon-loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
