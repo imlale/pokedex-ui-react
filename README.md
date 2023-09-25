@@ -1,27 +1,30 @@
-# React + TypeScript + Vite
+# Pokedex UI
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Pokedex UI is a React application developed with TypeScript and Vite that provides a user-friendly interface for exploring information about Pokémon. It interacts with the Pokémon API to retrieve data on various Pokémon species, their attributes, and more.
 
-Currently, two official plugins are available:
+![Pokedex UI Screenshot](src/assets/img/screenshot.JPG "Screenshot")
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+- View detailed information about Pokémon.
+- Search for Pokémon by name
+- Get information on abilities, types, and evolutions.
+- TODO: Fix alternate evolutions.
+- TODO: Add filters to enhance searching and sorting.
+- TODO: Search by ID
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Technologies Used
 
-- Configure the top-level `parserOptions` property like this:
+- React: A popular JavaScript library for building user interfaces.
+- TypeScript: A statically typed superset of JavaScript for improved code quality.
+- Vite: A fast, lightweight development environment for building web applications.
+- Pokémon API: An external API for retrieving Pokémon-related data.
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+## License
+This project is licensed under the MIT License. See the LICENSE file for details.
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Acknowledgments
+Thanks to the Pokémon API for providing the data used in this project.
+Happy exploring, and enjoy using the Pokedex UI!
+
+Thanks to @umpontesis [Discord](https://discord.gg/p9gdRtm) for UI.
