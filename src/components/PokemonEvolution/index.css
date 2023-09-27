@@ -2,6 +2,7 @@
     display: flex;   
     justify-content: center; 
     text-align: center;
+    flex-wrap: wrap;
 }
 .evolution-chain  div{
     width: 33%;
@@ -29,4 +30,13 @@
     left: 85%;
     opacity: 0.3;
     background-size: cover!important;
+}
+
+.evolution-item img{
+    transition: transform 0.5s;
+    cursor: pointer;
+}
+.evolution-item img:hover{
+    transform: scale(1.05) rotate(5deg);
+    transition: transform 0.5s;
 }

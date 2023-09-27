@@ -241,3 +241,18 @@ export interface Variety {
     is_default: boolean;
     pokemon:    Color;
 }
+
+export interface Pokemon {
+    name: string;
+    url: string;
+    types: Type2[];
+    id: number;
+    sprite: string;
+    nuevo?: boolean
+  }
+
+  
+interface Type2 {
+    type: Type2;
+    name: string;
+  }

@@ -141,3 +141,10 @@ h1{
   ::-webkit-scrollbar-thumb:hover {
     background-color: #a8bbbf;
   }
+
+
+.no-wrap{
+    white-space: nowrap; /* Evita que el texto se rompa y siga en una sola línea */
+  overflow: hidden; /* Oculta cualquier parte del texto que desborde el contenedor */
+  text-overflow: ellipsis;
+}

@@ -4,7 +4,8 @@
     position: absolute;
     z-index: 2;    
     width: 100%;
-    left: 0;       
+    left: 50%;
+    transform: translateX(-50%)       
 }
 .list-group{
     margin: 10px 30px;
@@ -49,4 +50,3 @@
     opacity: 0.5;
     
 }
-

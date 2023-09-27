@@ -21,7 +21,6 @@ function FinDePaginaObserver({ onFinDePagina, isLoading }: { onFinDePagina: () =
         // Ejecuta la función cuando se llega al final de la página
         //TO-DO, Se está ejecutando cuando todo es vacio.
         onFinDePagina();
-        console.log("recarga...", isLoading)
       }
     }, options);
 

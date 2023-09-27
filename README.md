@@ -2,16 +2,14 @@
 
 Pokedex UI is a React application developed with TypeScript and Vite that provides a user-friendly interface for exploring information about Pokémon. It interacts with the Pokémon API to retrieve data on various Pokémon species, their attributes, and more.
 
-![Pokedex UI Screenshot](src/assets/img/screenshot.jpg "Screenshot")
+![Pokedex UI Screenshot](src/assets/img/screenshot.jpggit "Screenshot")
 
 ## Features
 
 - View detailed information about Pokémon.
 - Search for Pokémon by name
 - Get information on abilities, types, and evolutions.
-- TODO: Fix alternate evolutions.
-- TODO: Add filters to enhance searching and sorting.
-- TODO: Search by ID
+
 
 ## Technologies Used
 

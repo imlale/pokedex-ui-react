@@ -186,6 +186,7 @@
     -webkit-text-stroke: 1.5px;
     -webkit-text-stroke-width: 1.5px;
     -webkit-text-stroke-color: rgb(255, 255, 255);
+    
     position: absolute;
     top: -20px;
     left: -10%;
@@ -197,10 +198,10 @@
 }
 
 .pokemon-name-bg p {
-    animation-name: desplazamiento;
-    animation-duration: 40s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
+    animation: desplazamiento 40s linear infinite;
+    -webkit-animation: desplazamiento 40s linear infinite;
+    -moz-animation: desplazamiento 40s linear infinite;
+    -o-animation: desplazamiento 40s linear infinite;
     animation-direction: alternate;
 }
 

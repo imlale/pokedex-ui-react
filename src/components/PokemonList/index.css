@@ -11,7 +11,7 @@
 }
 .custom-card:hover .poke-image{
    
-    transform: scale(1.1);
+    transform: scale(1.1) rotate(5deg);
     transition: transform 0.5s;
 }
 
@@ -19,6 +19,16 @@
     min-width: 290px;
     flex: 1!important;
 }
+
+.card-container.loading{
+    filter: blur(2px) grayscale(1);
+}
+.card-container.loading h5, .card-container.loading .types{
+    visibility: hidden;
+}
+
+
+
 .card h5{
     color: var(--text-white, #FFF);
     /* Pokemon Name */
@@ -44,6 +54,9 @@
     right: 0;
     top: -30px;
     transition: transform 0.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .card::before{
     content: "";
@@ -58,7 +71,7 @@
 }
 
 .type-badge {
-      
+    color: var(--text-white, #FFF);
     float: left;
     margin-right: 5px;
     border-radius: 3px;
@@ -77,4 +90,7 @@
     filter: invert(100%);
 }
 
+.type-unknown, .type-shadow{
+    display: none;
+}
 

@@ -1,13 +1,15 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { Pokedex } from "../../util/types";
 import { TypeBadge } from "../PokemonList";
 import "./index.css";
 import Loader from "../../util/Loader";
 import PokemonEvolution from "../PokemonEvolution";
+import { DataContext } from "../../context/DataContext";
 
 
 
-const DetailedPokemon = ({ id = 0, }) => {
+const DetailedPokemon = () => {
+    const {selectedPokemon} = useContext(DataContext);
 
     const [detallePokemon, setDetallePokemon] = useState<Pokedex>();
     const [isLoading, setisLoading] = useState(false);
@@ -15,7 +17,7 @@ const DetailedPokemon = ({ id = 0, }) => {
 
         const fetchPokemon = async () => {
             setisLoading(true)
-            const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
+            const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${selectedPokemon}`);
             const data = await response.json();
             //obtener informacíon de la especie
             const species = await fetch(data.species.url);
@@ -29,11 +31,11 @@ const DetailedPokemon = ({ id = 0, }) => {
 
 
         }
-        if (id !== 0) {
+        if (selectedPokemon !== 0) {
             fetchPokemon();
 
         }
-    }, [id])
+    }, [selectedPokemon])
 
     //añadir evento al offcanvas cuando se cierra
     useEffect(() => {
@@ -53,7 +55,7 @@ const DetailedPokemon = ({ id = 0, }) => {
     }, [])
 
     function numberToPokeString(number: number = 0) {
-        return "#" + ("000" + number).slice(-4);
+        return "#" + ("0000" + number).slice(-5);
     }
 
 
@@ -127,7 +129,7 @@ const DetailedPokemon = ({ id = 0, }) => {
                         <div className="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
                             <div className="evolution">
                                 <h6>Evolution Chain</h6>
-                                <PokemonEvolution id={detallePokemon?.id}></PokemonEvolution>
+                                <PokemonEvolution url={detallePokemon?.species.url}></PokemonEvolution>
 
                             </div>
                         </div>

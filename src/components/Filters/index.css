@@ -1,0 +1,113 @@
+#offcanvasFilters{
+    height: 50vh;
+}
+
+.filter-option{
+    min-height: 60px;
+}
+.fiter-item{
+    cursor: pointer;
+}
+
+.filter-button{
+    cursor: pointer;
+    display: block;
+    height: 30px;
+    width: 30px;
+    background: url('../../assets/img/icons/Filter.svg') no-repeat;
+    background-size: cover;
+}
+.all-button{
+    color: var(--text-black, #17171B);
+    float: left;
+    margin-right: 5px;
+    border-radius: 3px; 
+    padding-left: 15px;
+    padding-right: 15px;
+    align-items: center;
+    height: 33px;
+    width: 100px;
+}
+.color-button{ color: var(--text-white, #FFF); border: 0 ;
+    height: 33px;
+    width: 80px;
+    border-radius: 3px;
+}
+.color-button.black{background-color: var(--dark-color, #17171B);}
+.color-button.blue{background-color: var(--water-color, #17171B);}
+.color-button.brown{background-color: var(--ground-color, #17171B);}
+.color-button.gray{background-color: var(--normal-color, #17171B);}
+.color-button.green{background-color: var(--grass-color, #17171B);}
+.color-button.purple{background-color: var(--poison-color, #17171B);}
+.color-button.pink{background-color: var(--fairy-color, #17171B);}
+.color-button.red{background-color: var(--psychic-color, #17171B);}
+.color-button.yellow{background-color: var(--electric-color, #17171B);}
+.color-button.white{background-color: var(--text-white, #fff); color: var(--text-black, #000);}
+
+
+.sort-button{
+    cursor: pointer;
+    display: block;
+    height: 30px;
+    width: 30px;
+    background: url('../../assets/img/icons/Sort.svg') no-repeat;
+    background-size: cover;
+}
+
+.sort-button.invert{
+    -webkit-transform: scaleY(-1);
+    transform: scaleY(-1) ;
+}
+
+#offcanvasFilters .offcanvas-title{
+    color: var(--text-black, #17171B);
+    /* Pokemon Name */
+
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+#offcanvasFilters .offcanvas-body{
+        color: var(--text-gray, #747476);
+    /* Description */
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+#offcanvasFilters .offcanvas-header{
+    padding-bottom: 0!important;
+}
+
+#offcanvasFilters{
+    border-radius: 30px 30px 0px 0px;
+    padding: 3vw;
+    transition: height 0.5s ease-in-out;
+}
+
+h6{
+    color: var(--text-black, #17171B);
+}
+
+#offcanvasFilters.full-size{
+    height: 90vh!important;
+    transition: height 0.5s ease-in-out;
+}
+
+#offcanvasFilters .enlarger {
+
+    display: block;
+    width: 15vw;
+    height: 10px;
+    position: absolute;
+    top: -18px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    border-radius: 15px;
+    opacity: 0.8;
+    cursor: pointer;
+}
+

@@ -3,36 +3,41 @@ import DetailedPokemon from "./components/DetailedPokemon";
 import SearchBar from "./components/SearchBar";
 import "./assets/bootstrap/css/bootstrap.min.css";
 import './assets/bootstrap/js/bootstrap.bundle.min.js';
-import { useState } from "react";
+import ScrollToTopButton from "./util/ScrollToTopButton";
+import Filters from "./components/Filters/";
+import { DataProvider } from "./context/DataContext.js";
+
 
 
 function App(): JSX.Element {
 
-  const [selectedPokemon, setSelectedPokemon] = useState(0);
-
-  const handleSelectedPokemonChange = (pokemonId: number) => {
-    setSelectedPokemon(pokemonId);
-    
-  };
   return (
-    <>
+    <DataProvider>
+      
+    <div className="container">
       <header >
+        <div className="row options float-end">
+          <Filters />
+        </div>
         <div className="row">
           <div className="col">
             <div className="main-title">
               <h1>Pokédex</h1>
             </div>
-            <SearchBar onSelectedPokemonChange={handleSelectedPokemonChange} />
+            {<SearchBar/>}
           </div>
         </div>
       </header>
       <aside>
-        <DetailedPokemon id={selectedPokemon}  />
+        {<DetailedPokemon />}
       </aside>
       <main >
-        <PokemonList onSelectedPokemonChange={handleSelectedPokemonChange} />
+       { <PokemonList />}
+
       </main>
-    </>
+      <ScrollToTopButton></ScrollToTopButton>
+    </div>
+    </DataProvider>
   )
 }
 
