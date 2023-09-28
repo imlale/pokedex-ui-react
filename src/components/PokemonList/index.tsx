@@ -34,6 +34,8 @@ const PokemonList: React.FC = () => {
 
     }
     fetchPokemonList("https://pokeapi.co/api/v2/pokemon?offset=0&limit=1292");
+
+    
     //fetchPokemonList("./util/pokemonFull.json");
   }, []);
 

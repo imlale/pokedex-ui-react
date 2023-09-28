@@ -6,10 +6,12 @@ import './assets/bootstrap/js/bootstrap.bundle.min.js';
 import ScrollToTopButton from "./util/ScrollToTopButton";
 import Filters from "./components/Filters/";
 import { DataProvider } from "./context/DataContext.js";
-
+import './App.css';
+import './themes/themes.css'
 
 
 function App(): JSX.Element {
+  
 
   return (
     <DataProvider>

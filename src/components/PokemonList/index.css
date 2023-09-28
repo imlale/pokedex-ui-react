@@ -30,7 +30,7 @@
 
 
 .card h5{
-    color: var(--text-white, #FFF);
+    color: var(--text-white-no-change, #FFF);
     /* Pokemon Name */
     font-size: 26px;
     font-style: normal;
@@ -39,7 +39,7 @@
 }
 
 .card h6{
-    color: var(--text-number, rgba(23, 23, 27, 0.60));
+    color: var(--text-black, rgba(23, 23, 27, 0.60));
     /* Pokemon Number */
     font-size: 12px;
     font-style: normal;
@@ -71,7 +71,7 @@
 }
 
 .type-badge {
-    color: var(--text-white, #FFF);
+    color: var(--text-white-no-change, #FFF);
     float: left;
     margin-right: 5px;
     border-radius: 3px;

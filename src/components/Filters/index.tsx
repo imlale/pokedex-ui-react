@@ -2,6 +2,7 @@ import { useState, useEffect, useContext, useRef } from "react";
 import { DataContext } from "../../context/DataContext";
 import { Pokemon } from "../../util/types";
 import { TypeBadge } from "../PokemonList";
+import ThemeToggler from "../../themes/ThemeToggler";
 import './index.css'
 
 function toggleSize() {
@@ -9,20 +10,23 @@ function toggleSize() {
     x?.classList.toggle("full-size")
 }
 
+
+
 function Filters() {
 
 
     return (
         <div>
             <div className="d-flex gap-2">
-                <span className="filter-button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasFilters" aria-controls="offcanvasFilters"></span>
+                <ThemeToggler></ThemeToggler>
+                <span className="filter-button theme-icon" data-bs-toggle="offcanvas" data-bs-target="#offcanvasFilters" aria-controls="offcanvasFilters"></span>
                 <OrderElements ></OrderElements>
             </div>
             <div className="offcanvas offcanvas-bottom" onClick={() => { toggleSize() }} tabIndex={-1} id="offcanvasFilters" aria-labelledby="offcanvasBottomLabel">
                 <div className="enlarger"></div>
                 <div className="offcanvas-header" >
                     <h5 className="offcanvas-title" id="offcanvasBottomLabel">Filters</h5>
-                    <button type="button" className="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    <button type="button" className="btn-close text-reset theme-icon" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
                 <div className="offcanvas-body small">
                     <p>Use advanced search to explore Pokémon by type, weakness, height and more!</p>
@@ -282,8 +286,10 @@ function OrderElements() {
     }
 
     return <div>
-        <span className={`sort-button`} onClick={() => handleOrderItems()}></span>
+        <span className={`sort-button theme-icon`} onClick={() => handleOrderItems()}></span>
     </div>
 }
+
+
 
 export default Filters;

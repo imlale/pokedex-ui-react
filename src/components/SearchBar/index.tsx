@@ -37,7 +37,7 @@ const SearchBar = () => {
     }
     
     return <div className="search-bar form-outline">
-        <span className="search-icon"></span>
+        <span className="search-icon theme-icon"></span>
         <input type="search" onChange={(e)=>{handleChange(e.target.value)}}
                 className="input-search focus-ring focus-ring-dark" placeholder="What Pokemon are you looking for?"
                 value={valorBuscado}/>

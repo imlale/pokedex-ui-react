@@ -1,0 +1,92 @@
+
+:root .dark-theme{
+    --bug-color: #366b26;
+    --dark-color: #181830;
+    --dragon-color: #212d57;
+    --electric-color: #ad891c;
+    --fairy-color: #943158;
+    --fighting-color: #77253a;
+    --fire-color: #cc680a;
+    --flying-color: #284072;
+    --ghost-color: #3c2970;
+    --grass-color: #265826;
+    --ground-color: #884221;
+    --ice-color: #27777e;
+    --normal-color: #5d606e;
+    --poison-color: #55184b;
+    --psychic-color: #862325;
+    --rock-color: #7c601f;
+    --steel-color: #174e68; 
+    --water-color: #124a7a;
+
+    --text-black: #c8c8f3;
+    --text-white: #252525;
+    --text-white-no-change: #fff;
+    --text-gray: #8f8f91;
+
+    --background-default-color: #f2f2f2;
+    --type-bug-color: #394913;
+    --type-dark-color: #2c2b30;
+    --type-dragon-color: #073057;
+    --type-electric-color: #5f5513;
+    --type-fairy-color: #743561;
+    --type-fighting-color: #631e2f;
+    --type-fire-color: #a74b0a;
+    --type-flying-color: #323d57;
+    --type-ghost-color: #2f3a5f;
+    --type-grass-color: #2a7522;
+    --type-ground-color: #572e1c;
+    --type-ice-color: #2d615a;
+    --type-normal-color: #45474b;
+    --type-poison-color: #422152;
+    --type-psychic-color: #4b1e1e;
+    --type-rock-color: #4b4534;
+    --type-steel-color: #1d3846;
+    --type-water-color: #1c3753;
+}
+:root{
+    --bug-color: #8bd674;
+    --dark-color: #6f6e78;
+    --dragon-color: #7383b9;
+    --electric-color: #f2cb55;
+    --fairy-color: #eba8c3;
+    --fighting-color: #eb4971;
+    --fire-color: #ffa756;
+    --flying-color: #83a2e3;
+    --ghost-color: #8571be;
+    --grass-color: #8bbe8a;
+    --ground-color: #f78551;
+    --ice-color: #91d8df;
+    --normal-color: #b5b9c4;
+    --poison-color: #9f6e97;
+    --psychic-color: #ff6568;
+    --rock-color: #d4c294;
+    --steel-color: #4c91b2; 
+    --water-color: #58abf6;
+
+    --text-black: #17171B;
+    --text-white: #f2f2f2;
+    --text-white-no-change: #f2f2f2;
+    --text-gray: #747476;
+
+    --background-default-color: #f2f2f2;
+    --background-default-input: #F2F2F2;
+    --type-bug-color: #8CB230;
+    --type-dark-color: #58575F;
+    --type-dragon-color: #0F6AC0;
+    --type-electric-color: #EED535;
+    --type-fairy-color: #ED6EC7;
+    --type-fighting-color: #D04164;
+    --type-fire-color: #FD7D24;
+    --type-flying-color: #748FC9;
+    --type-ghost-color: #556AAE;
+    --type-grass-color: #62B957;
+    --type-ground-color: #DD7748;
+    --type-ice-color: #61CEC0;
+    --type-normal-color: #9DA0AA;
+    --type-poison-color: #A552CC;
+    --type-psychic-color: #EA5D60;
+    --type-rock-color: #BAAB82;
+    --type-steel-color: #417D9A;
+    --type-water-color: #4A90DA;
+}

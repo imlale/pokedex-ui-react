@@ -31,6 +31,9 @@
     opacity: 0.3;
     background-size: cover!important;
 }
+.dark-theme .arrow{
+    filter: invert(1);
+}
 
 .evolution-item img{
     transition: transform 0.5s;
