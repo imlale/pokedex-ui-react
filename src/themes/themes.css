@@ -19,9 +19,9 @@
     --steel-color: #174e68; 
     --water-color: #124a7a;
 
-    --text-black: #c8c8f3;
+    --text-black: #f2f2f2;
     --text-white: #252525;
-    --text-white-no-change: #fff;
+    --text-white-no-change: #f2f2f2;
     --text-gray: #8f8f91;
 
     --background-default-color: #f2f2f2;
@@ -44,6 +44,21 @@
     --type-steel-color: #1d3846;
     --type-water-color: #1c3753;
 }
+
+.dark-theme .poke-image, .dark-theme .pokemon-image {
+    filter: saturate(1.7) brightness(0.8)
+}
+
+.dark-theme .container {
+  background-image: url("../assets/img/patters/bg-pokeball-dark.svg");
+  transition: background-image 0.2s ease-out;   
+}
+
+.dark-theme .theme-icon{
+    filter: invert(1)
+}
+
+/*default*/
 :root{
     --bug-color: #8bd674;
     --dark-color: #6f6e78;

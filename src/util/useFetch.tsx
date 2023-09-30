@@ -23,7 +23,7 @@ export const useFetch = (url: string) => {
 
 /*let [detallePokemon, setDetallePokemon] = useState<Pokedex>();
     const { data: pokemonData } = useFetch("https://pokeapi.co/api/v2/pokemon/650");
-    console.log(pokemonData);
+
     if(pokemonData){
         const { data: specisData } = useFetch(pokemonData.species.url);
         setDetallePokemon({...pokemonData, ...specisData})

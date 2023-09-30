@@ -5,6 +5,8 @@ import FinDePaginaObserver from "../../util/FinDePaginaObserver";
 import { DataContext } from "../../context/DataContext";
 import { Pokemon } from "../../util/types";
 import Loader from "../../util/Loader";
+import { useTranslation } from "react-i18next";
+import { fetchPokemonList, fetchPokemonListDetail } from "../../services/fetchPokemonApi";
 
 
 
@@ -18,100 +20,51 @@ function numberToPokeString(number: number) {
 const PokemonList: React.FC = () => {
 
   const [pokemonList, setPokemonList] = useState<Pokemon[]>([]);
-  const { handleSelectedPokemonChange, siguientePagina, setSiguientePagina, pokemonFetchedList, setPokemonFetchedList } = useContext(DataContext);
+  const { onSelectedPokemonChange: handleSelectedPokemonChange, siguientePagina, setSiguientePagina, pokemonFetchedList, setPokemonFetchedList } = useContext(DataContext);
   const [isLoading, setIsLoading] = useState(false);
 
-
   useEffect(() => {
-    const fetchPokemonList = async (url: string) => {
-      const response = await fetch(url);
-      const data = await response.json();
-      const results = data.results;
-      if (results) {
-        setPokemonFetchedList(results);
-        fetchPokemonListDetail(true);
-      }
+    try {
+      fetchPokemonList("https://pokeapi.co/api/v2/pokemon?offset=0&limit=1292")
+        .then(results => {
+          setPokemonFetchedList(results);
+          fetchPokemonListDetail(pokemonFetchedList, 0, 14);
+        })
 
+    } catch (error: any) {
+      throw Error(error.message);
     }
-    fetchPokemonList("https://pokeapi.co/api/v2/pokemon?offset=0&limit=1292");
-
-    
-    //fetchPokemonList("./util/pokemonFull.json");
   }, []);
 
-
-
-  const handleCargarMas = () => {
-
-    if (pokemonFetchedList.length === 0) {
-      return;
-    }
-    fetchPokemonListDetail(false);
-  }
-
-  //Si cambia la lista por filtros, actualizar
   useEffect(() => {
-    
-    fetchPokemonListDetail(true);
 
-  }, [pokemonFetchedList])
-
-  const fetchPokemonListDetail = async (nuevaLista =false) => {
-
-    if (pokemonFetchedList.length === 0) {
-      return;
-    }
     setIsLoading(true);
 
-    // Array auxiliar para almacenar los nuevos elementos
-    const updatedPokemonList: Pokemon[] = [];
+    fetchPokemonListDetail(pokemonFetchedList, siguientePagina, 14)
+      .then((updatedPokemonList) => {
+        setIsLoading(false);
+        if (siguientePagina === 0) {
+          setPokemonList([...updatedPokemonList]);
+        } else {
+          setPokemonList([...pokemonList, ...updatedPokemonList]);
+        }
+      });
+  }, [pokemonFetchedList, siguientePagina])
 
-    // Realizar las solicitudes fetch para obtener los detalles de cada Pokémon
-    for (let i = siguientePagina; i < (siguientePagina + 14); i++) {
-
-
-      const pokemon = pokemonFetchedList[i];
-
-      if (!pokemon) { continue }
-      const response = await fetch(pokemon.url);
-      const data = await response.json();
-      const { name, types, id, sprites } = data;
-      const sprite = sprites.other["official-artwork"].front_default;
-      const pokeItem: Pokemon = {
-        name: name,
-        url: pokemon.url,
-        types: types,
-        id: id,
-        sprite: sprite,
-        nuevo: nuevaLista
-      };
-
-      updatedPokemonList.push(pokeItem);
-
-
-
+  const handleCargarMas = () => {
+    if(pokemonFetchedList.length === 0) {
+      return;
     }
+    setSiguientePagina(siguientePagina+14);
+  }
 
-    //cuando se aplica un filtro se resetea el valor de las páginas a 0.
-    if (siguientePagina === 0) {
-      setPokemonList([...updatedPokemonList]);
-    } else {
-      setPokemonList([...pokemonList, ...updatedPokemonList]);
-    }
-    // Actualizar el estado una vez finalizadas todas las solicitudes
-    setSiguientePagina(siguientePagina + 14);
-    setIsLoading(false);
-
-  };
-
-
-
+  
   return (
     <div>
 
       <div className="row pokemon-list">
         {pokemonList.map((pokemon: any, index: number) => {
-          return <PokemonCard key={index} pokemon={pokemon} isLoading={isLoading && index>= siguientePagina}
+          return <PokemonCard key={pokemon.id} pokemon={pokemon} isLoading={isLoading && index >= siguientePagina}
             onSelectedPokemonChange={handleSelectedPokemonChange} />
         })}
         <div className="cargar-mas">
@@ -124,9 +77,10 @@ const PokemonList: React.FC = () => {
   )
 }
 
-const PokemonCard = ({ pokemon, onSelectedPokemonChange, isLoading }: { pokemon: Pokemon, onSelectedPokemonChange: (pokemonId: number) => void , isLoading: boolean}) => {
+const PokemonCard = ({ pokemon, onSelectedPokemonChange, isLoading }: { pokemon: Pokemon, onSelectedPokemonChange: (pokemonId: number) => void, isLoading: boolean }) => {
+  const [imageLoading, setImageLoading] = useState(true);
 
-  return <div className={`col-12 col-sm-6 col-md-4 col-lg-3 mb-3 card-container poke-id-${pokemon.id} ${ isLoading? "loading" : ""}`}
+  return <div className={`col-12 col-sm-6 col-md-4 col-lg-3 mb-3 card-container poke-id-${pokemon.id} ${isLoading ? "loading" : ""}`}
     data-bs-toggle="offcanvas"
     data-bs-target={"#offcanvasRight"} aria-controls="offcanvasRight"
     onClick={() => onSelectedPokemonChange(pokemon.id)}>
@@ -140,8 +94,9 @@ const PokemonCard = ({ pokemon, onSelectedPokemonChange, isLoading }: { pokemon:
               return <TypeBadge key={index} name={type.type.name} />
             })}
           </div>
-          <div className={`poke-image ${pokemon.sprite ? "" : "no-image"}`}>
-            {( isLoading)? <Loader /> :pokemon.sprite ? <img src={pokemon.sprite} alt={pokemon.name} className="w-100" /> : ""}
+          <div className={`poke-image ${pokemon.sprite ? "" : "no-image"} ${imageLoading ? "loading" : ""}`}>
+            {(imageLoading)? <div className="position-absolute"><Loader /></div> : ""}
+            {(isLoading) ? <Loader /> : pokemon.sprite ? <img onLoad={() => setImageLoading(false)} src={pokemon.sprite} alt={pokemon.name} className="w-100" /> : ""}
           </div>
         </div>
 
@@ -151,9 +106,10 @@ const PokemonCard = ({ pokemon, onSelectedPokemonChange, isLoading }: { pokemon:
 }
 
 export const TypeBadge = ({ name }: { name: string }) => {
+  const [t] = useTranslation("global")
   return <div className={`type-${name} type-badge`} >
     <span className="icon"></span>
-    <span className="is-title">{name}</span>
+    <span className="is-title">{t(`types.${name ? name : "unknown"}`)}</span>
   </div>
 }
 

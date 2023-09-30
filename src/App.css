@@ -11,27 +11,29 @@ p {
   transition: background-color 0.5s ease-out;
 }
 
-.dark-theme {
-  transition: background-color 0.5s ease-out;
+.offcanvas {
+  background-color: var(--text-white, #FFF);
 }
+
 /*
 import bgLigth from  '../assets/img/patters/bg-pokeball.svg'
 import bgDark from  '../assets/img/patters/bg-pokeball-dark.svg'
 */
 body {
 
-    background-image: url("./assets/img/patters/bg-pokeball.svg");
-    background-repeat: no-repeat;
-    background-position:  top center ;
-    background-size: 90%;
+
     background-color: var(--text-white);
-    transition: background-image 0.2s ease-out;   
+    
 
 }
-body.dark-theme{
-  background-image: url("./assets/img/patters/bg-pokeball-dark.svg");
+.container{
+  background-image: url("./assets/img/patters/bg-pokeball.svg");
+  background-repeat: no-repeat;
+  background-position:  top center ;
+  background-size: 90%;
   transition: background-image 0.2s ease-out;   
 }
+
 .main-title{
     margin-top: 100px;
     margin-bottom: 30px;
@@ -148,10 +150,5 @@ h1{
   text-overflow: ellipsis;
 }
 
-.theme-icon.invert-filter{
-  filter: invert(1)
-}
 
-.dark-theme .poke-image, .dark-theme .pokemon-image {
-  filter: saturate(1.7) brightness(0.8)
-}
+

@@ -1,50 +1,39 @@
 import { useState, createContext } from "react";
-import { Pokemon } from "../util/types";
+
+type Pokemon = {
+    name: string;
+    url: string;
+}
 
 interface ContextValue {
     selectedPokemon: number;
-    handleSelectedPokemonChange: (arg0: number) => void;
+    onSelectedPokemonChange: (id: number) => void;
     pokemonFetchedList: Pokemon[];
-    setPokemonFetchedList: (arg0: Pokemon[]) => void;
+    setPokemonFetchedList: (list: Pokemon[]) => void;
     siguientePagina: number;
-    setSiguientePagina: (arg0: number) => void;
-  }
-  
-  // Crea el contexto con el valor inicial
-  const initialContextValue: ContextValue = {
-    selectedPokemon: 42, // Ejemplo de valor numérico
-    handleSelectedPokemonChange: (a:number) => {console.log(a); },
-    pokemonFetchedList: [],
-    setPokemonFetchedList: (pokemonFetchedList: Pokemon[]) => { return pokemonFetchedList},
-    siguientePagina: 0, // Ejemplo de valor numérico
-    setSiguientePagina: (a:number) => { console.log(a); },
-  };
-
-  export const DataContext = createContext(initialContextValue);
+    setSiguientePagina: (page: number) => void;
+}
+export const DataContext = createContext({} as ContextValue);
 
 export const DataProvider = ({ children }: { children: JSX.Element }) => {
 
     const [selectedPokemon, setSelectedPokemon] = useState(0);
     const [pokemonFetchedList, setPokemonFetchedList] = useState<Pokemon[]>([]);
     const [siguientePagina, setSiguientePagina] = useState(0);
-
-    const handleSelectedPokemonChange = (pokemonId: number) => {
+    const onSelectedPokemonChange = (pokemonId: number) => {
         setSelectedPokemon(pokemonId);
-
     };
 
     const contextValue = {
-        // Puedes agregar tus datos o funciones aquí
         selectedPokemon,
-        handleSelectedPokemonChange,
+        onSelectedPokemonChange: onSelectedPokemonChange,
         pokemonFetchedList,
-         setPokemonFetchedList,
-         siguientePagina,
-         setSiguientePagina
+        setPokemonFetchedList,
+        siguientePagina,
+        setSiguientePagina
     };
     return (
         <DataContext.Provider value={contextValue} >
-
             {children}
         </DataContext.Provider>
     )

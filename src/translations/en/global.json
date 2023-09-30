@@ -1,0 +1,88 @@
+{
+    "errors":{
+        "pokemon-fetch": "Can't fetch Pokemon Data.",
+        "types-fetch": "Can't fetch Types Data.",
+        "types-colors": "Can't fetch Colors Data."
+    },
+    "search": {
+        "placeholder": "What Pokemon are you looking for?"
+    },
+    "general":{
+        "loading": "Loading...",
+        "language": "en"
+    },
+    "types":{
+        "grass": "Grass",
+        "fire": "Fire",
+        "water": "Water",
+        "bug": "Bug",
+        "normal": "Normal",
+        "poison": "Poison",
+        "electric": "Electric",
+        "ground": "Ground",
+        "flying": "Flying",
+        "fighting": "Fighting",
+        "psychic": "Psychic",
+        "rock": "Rock",
+        "ice": "Ice",
+        "ghost": "Ghost",
+        "dragon": "Dragon",
+        "dark": "Dark",
+        "steel": "Steel",
+        "fairy": "Fairy",
+        "shadow": "Shadow",
+        "unknown": "Unknown",
+        "default": "Default"
+    },
+    "details": "Details",
+    "about": {
+        "title" : "About",
+        "pokedex-data": "Pokédex Data",
+        "height": "Height",
+        "weight": "Weight",
+        "pokedex-training": "Pokedex Training",
+        "capture-rate": "Capture Rate",
+        "base-happiness": "Base Happiness",
+        "base-exp": "Base Exp",
+        "growth-rate": "Growth Rate"
+    },
+    "stats": {
+        "title" : "Stats",
+        "base-stats" : "Base Stats",
+        "hp" : "HP",
+        "attack" : "Attack",
+        "defense" : "Defense",
+        "special-attack" : "Sp Attack",
+        "special-defense" : "Sp Defense",
+        "speed" : "Speed",
+        "type-defenses": "Type Defenses",
+        "double-damage-from": "Double Damage From",
+        "double-damage-to": "Double Damage To",
+        "half-damage-from": "Half Damage From",
+        "half-damage-to": "Half Damage To"
+    },
+    "evolutions": {
+        "title" : "Evolutions",
+        "evolution-chain" : "Evolution Chain",
+        "alternative": "Alternative"
+    },
+    "filters": {
+        "title" : "Filters",
+        "description": "Use advanced search to explore Pokémon by type, weakness, height and more!",
+        "all": "All"
+    },
+    "colors": {
+        "title" : "Colors",
+        "black": "Black",
+        "white": "White",
+        "gray": "Gray",
+        "red": "Red",
+        "blue": "Blue",
+        "yellow": "Yellow",
+        "green": "Green",
+        "pink": "Pink",
+        "purple": "Purple",
+        "brown": "Brown",
+        "default": "Default"
+    }
+}

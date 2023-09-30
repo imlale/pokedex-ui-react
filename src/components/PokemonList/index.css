@@ -21,9 +21,10 @@
 }
 
 .card-container.loading{
-    filter: blur(2px) grayscale(1);
+    filter: grayscale(1);
+    pointer-events: none;
 }
-.card-container.loading h5, .card-container.loading .types{
+.card-container.loading h5, .card-container.loading .types, .card-container.loading h6{
     visibility: hidden;
 }
 

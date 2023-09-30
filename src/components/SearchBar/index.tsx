@@ -2,11 +2,11 @@ import { pokemonAPI } from "../../util/pokemonAPI";
 import {useState, useContext} from 'react';
 import './index.css';
 import { DataContext } from "../../context/DataContext";
+import {useTranslation} from 'react-i18next';
 
 interface  Pokemon{
     name: string;
-    id:  number;
-    
+    id:  number;    
 }
 
 
@@ -14,18 +14,16 @@ function numberToPokeString(number: number = 0) {
     return ("0000" + number).slice(-5);
 }
 const SearchBar = () => {
-    //const [resultados, setResultados] = useState();
-    const {handleSelectedPokemonChange} = useContext(DataContext);
+    const {onSelectedPokemonChange: handleSelectedPokemonChange} = useContext(DataContext);
     const [valorBuscado, setValorBuscado] = useState("");
-    const handleChange = (valor : string) =>{
+    const [t] = useTranslation("global")
+    const handleInputChange = (valor : string) =>{
         setValorBuscado(valor)
-
     }
 
-    const handleClick = (id: number) =>{
+    const handleResultClick = (id: number) =>{       
         
-        //limpiar el input de busqueda
-        setValorBuscado("")
+        setValorBuscado("")//limpiar el input de busqueda
         handleSelectedPokemonChange(id)
     }
 
@@ -38,14 +36,14 @@ const SearchBar = () => {
     
     return <div className="search-bar form-outline">
         <span className="search-icon theme-icon"></span>
-        <input type="search" onChange={(e)=>{handleChange(e.target.value)}}
-                className="input-search focus-ring focus-ring-dark" placeholder="What Pokemon are you looking for?"
+        <input type="search" onChange={(e)=>{handleInputChange(e.target.value)}}
+                className="input-search focus-ring focus-ring-dark" placeholder={t("search.placeholder")}
                 value={valorBuscado}/>
         <div className={'search-results container ' + (valorBuscado != "" ? "show" : "hide")}>
             <ul className="list-group ">
                 {datosFiltrados.map((pokemon: Pokemon)=>{
                     return <li  className="py-2  result-item list-group-item list-group-item-action"
-                                onClick={() => {handleClick(pokemon.id)}}
+                                onClick={() => {handleResultClick(pokemon.id)}}
                                 data-bs-toggle="offcanvas" data-bs-target={"#offcanvasRight"} aria-controls="offcanvasRight"
                                 key={pokemon.id}>{numberToPokeString(pokemon.id)} - <span className="is-title">{pokemon.name}</span></li>
                 })}

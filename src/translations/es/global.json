@@ -1,0 +1,88 @@
+{
+    "errors": {
+        "pokemon-fetch": "No se puede obtener datos de Pokémon.",
+        "types-fetch": "No se pueden obtener datos de tipos.",
+        "types-colors": "No se pueden obtener datos de colores."
+    },
+    "search": {
+        "placeholder": "¿Qué Pokémon estás buscando?"
+    },
+    "general": {
+        "loading": "Cargando...",
+        "language": "es"
+    },
+    "types": {
+        "grass": "Hierba",
+        "fire": "Fuego",
+        "water": "Agua",
+        "bug": "Bicho",
+        "normal": "Normal",
+        "poison": "Veneno",
+        "electric": "Eléctrico",
+        "ground": "Tierra",
+        "flying": "Volador",
+        "fighting": "Lucha",
+        "psychic": "Psíquico",
+        "rock": "Roca",
+        "ice": "Hielo",
+        "ghost": "Fantasma",
+        "dragon": "Dragón",
+        "dark": "Siniestro",
+        "steel": "Acero",
+        "fairy": "Hada",
+        "shadow": "Sombra",
+        "unknown": "Desconocido",
+        "default": "Default"
+    },
+    "details": "Detalles",
+    "about": {
+        "title" : "Acerca de",
+        "pokedex-data": "Datos de la Pokédex",
+        "height": "Altura",
+        "weight": "Peso",
+        "pokedex-training": "Entrenamiento de la Pokédex",
+        "capture-rate": "Tasa de Captura",
+        "base-happiness": "Felicidad Base",
+        "base-exp": "Experiencia Base",
+        "growth-rate": "Tasa de Crecimiento"
+    },
+    "stats": {
+        "title" : "Estadísticas",
+        "base-stats" : "Estadísticas Base",
+        "hp" : "PV",
+        "attack" : "Ataque",
+        "defense" : "Defensa",
+        "special-attack" : "Ataque Especial",
+        "special-defense" : "Defensa Especial",
+        "speed" : "Velocidad",
+        "type-defenses": "Defensas por Tipo",
+        "double-damage-from": "Doble Daño De",
+        "double-damage-to": "Doble Daño A",
+        "half-damage-from": "Mitad de Daño De",
+        "half-damage-to": "Mitad de Daño A"
+    },
+    "evolutions": {
+        "title" : "Evoluciones",
+        "evolution-chain" : "Cadena Evolutiva",
+        "alternative": "Alternativa"
+    },
+    "filters": {
+        "title" : "Filtros",
+        "description": "¡Usa la búsqueda avanzada para explorar Pokémon por tipo, debilidad, altura y más!",
+        "all": "Todos"
+    },
+    "colors": {
+        "title" : "Colores",
+        "black": "Negro",
+        "white": "Blanco",
+        "gray": "Gris",
+        "red": "Rojo",
+        "blue": "Azul",
+        "yellow": "Amarillo",
+        "green": "Verde",
+        "pink": "Rosa",
+        "purple": "Morado",
+        "brown": "Marrón",
+        "default": "Default"
+    }
+}
