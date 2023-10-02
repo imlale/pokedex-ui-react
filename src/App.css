@@ -123,6 +123,10 @@ h1{
 .type-steel .icon{background-image: url('./assets/img/icons/Steel.svg')}
 .type-water .icon{background-image: url('./assets/img/icons/Water.svg')}
 
+.card.custom-card.undefined {
+  background-color: var(--water-color);
+}
+
 /* custom scrollbar */
 ::-webkit-scrollbar {
     width: 20px;
